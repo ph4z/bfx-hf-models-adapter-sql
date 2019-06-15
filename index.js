@@ -26,7 +26,8 @@ module.exports = ({
     throw new Error('no connection params provided')
   }
 
-  debug('[%s] connecting with %j', clientType, connection)
+  // NOTE: Don't log connection string for security
+  debug('[%s] connecting...', clientType)
 
   const db = knex({
     client: clientType,
@@ -48,5 +49,6 @@ module.exports = ({
     dbInit,
     mapMethods,
     collectionMethods,
+    name: 'SQL',
   }
 }
