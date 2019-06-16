@@ -1,5 +1,5 @@
-exports.up = function(knex, Promise) {
-   return knex.schema.createTable('algo_orders', function (table) {
+exports.up = function (knex, Promise) {
+  return knex.schema.createTable('algo_orders', function (table) {
     table.increments('id')
 
     table.string('mapKey', 64).notNullable()
@@ -10,8 +10,8 @@ exports.up = function(knex, Promise) {
 
     table.text('exchangeData')
   })
-};
+}
 
-exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('algo_orders');
-};
+exports.down = function (knex, Promise) {
+  return knex.schema.dropTable('algo_orders')
+}

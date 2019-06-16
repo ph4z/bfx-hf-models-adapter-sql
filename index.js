@@ -14,7 +14,7 @@ const CLIENT_TYPES = ['pg', 'mysql', 'sqlite']
 
 module.exports = ({
   clientType,
-  connection,
+  connection
 }) => {
   if (!_includes(CLIENT_TYPES, clientType)) {
     throw new Error([
@@ -32,14 +32,14 @@ module.exports = ({
 
   const db = knex({
     client: clientType,
-    connection,
+    connection
   })
 
   const dbInit = (model) => {
-    const { path } = model
+    const { path, name } = model
 
     if (!_isString(path) || _isEmpty(path)) {
-      throw new Error(`model DB path not string or empty: ${modelName}`)
+      throw new Error(`model DB path not string or empty for model ${name}`)
     }
 
     return db(path)
@@ -54,6 +54,6 @@ module.exports = ({
     mapMethods,
     genericMethods,
     collectionMethods,
-    name: 'SQL',
+    name: 'SQL'
   }
 }
