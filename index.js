@@ -7,6 +7,7 @@ const _includes = require('lodash/includes')
 const knex = require('knex')
 
 const mapMethods = require('./lib/map_methods')
+const genericMethods = require('./lib/generic_methods')
 const collectionMethods = require('./lib/collection_methods')
 
 const CLIENT_TYPES = ['pg', 'mysql', 'sqlite']
@@ -44,10 +45,14 @@ module.exports = ({
     return db(path)
   }
 
+  const close = db.destroy.bind(db)
+
   return {
     db,
     dbInit,
+    close,
     mapMethods,
+    genericMethods,
     collectionMethods,
     name: 'SQL',
   }
