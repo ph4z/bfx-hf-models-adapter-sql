@@ -1,5 +1,13 @@
 'use strict'
 
+// Automatically parses decimals as floats
+// NOTE: This results in a theoretical loss of precision
+// TODO: Use BigNum
+// https://github.com/tgriesser/knex/issues/927#issuecomment-291066092
+const pg = require('pg')
+const PG_DECIMAL_OID = 1700
+pg.types.setTypeParser(PG_DECIMAL_OID, parseFloat)
+
 const debug = require('debug')('bfx:hf:models:adapter-sql')
 const _isEmpty = require('lodash/isEmpty')
 const _isString = require('lodash/isString')
