@@ -50,7 +50,11 @@ module.exports = ({
       throw new Error(`model DB path not string or empty for model ${name}`)
     }
 
-    return db(path)
+    const knexOnPath = db(path)
+
+    knexOnPath._knex = db
+
+    return knexOnPath
   }
 
   const close = db.destroy.bind(db)
