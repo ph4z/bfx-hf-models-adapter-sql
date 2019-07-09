@@ -12,6 +12,8 @@ exports.up = function (knex, Promise) {
     table.string('symbol', 11).notNullable()
     table.string('tf', 3).notNullable()
 
+    table.string('key', 64).notNullable().unique()
+
     table.bigint('mts').notNullable()
     table.text('exchangeData')
   }).createTable('trades', function (table) {
