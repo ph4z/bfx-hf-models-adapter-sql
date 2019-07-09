@@ -6,7 +6,10 @@
 // https://github.com/tgriesser/knex/issues/927#issuecomment-291066092
 const pg = require('pg')
 const PG_DECIMAL_OID = 1700
+const PG_BIGINT_OID = 20
+
 pg.types.setTypeParser(PG_DECIMAL_OID, parseFloat)
+pg.types.setTypeParser(PG_BIGINT_OID, 'text', parseInt)
 
 const debug = require('debug')('bfx:hf:models:adapter-sql')
 const _isEmpty = require('lodash/isEmpty')
