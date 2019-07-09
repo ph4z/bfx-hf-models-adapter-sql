@@ -1,13 +1,12 @@
-// TODO: Auto-generate from model schemas
 exports.up = function (knex, Promise) {
   return knex.schema.createTable('candles', function (table) {
     table.increments('id')
 
-    table.decimal('open', 255).notNullable()
-    table.decimal('high', 255).notNullable()
-    table.decimal('low', 255).notNullable()
-    table.decimal('close', 255).notNullable()
-    table.decimal('vol', 255).notNullable()
+    table.decimal('open', null).notNullable()
+    table.decimal('high', null).notNullable()
+    table.decimal('low', null).notNullable()
+    table.decimal('close', null).notNullable()
+    table.decimal('volume', null).notNullable()
 
     table.string('exchange', 32).notNullable()
     table.string('symbol', 11).notNullable()
@@ -18,8 +17,8 @@ exports.up = function (knex, Promise) {
   }).createTable('trades', function (table) {
     table.increments('id')
 
-    table.decimal('price', 255).notNullable()
-    table.decimal('amount', 255).notNullable()
+    table.decimal('price', null).notNullable()
+    table.decimal('amount', null).notNullable()
     table.string('exchange', 32).notNullable()
     table.string('symbol', 11).notNullable()
 
