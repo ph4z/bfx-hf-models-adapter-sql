@@ -1,0 +1,16 @@
+# 1.0.0
+- manifest: bump deps
+- meta: add github issue/pr templates
+- meta: standardize travis config
+- meta: add placeholder npm test
+- meta: add example
+
+# 0.0.3
+- fix: pass criteria to map find() method
+- fix: return value on collection insert() method
+- refactor: get key from document in map set() method
+- refactor: decrease pg connection timeout
+- refactor: specify & increase pg pool size
+
+# 0.0.2
+- initial version [0.0.1 was tagged early in initial development]
