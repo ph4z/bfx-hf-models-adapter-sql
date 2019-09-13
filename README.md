@@ -8,7 +8,7 @@ const HFDBSQLAdapter = require('bfx-hf-models-adapter-sql')
 const { schema: HFDBBitfinexSchema } = require('bfx-hf-ext-plugin-bitfinex')
 const HFDB = require('bfx-hf-models')
 
-const { PSQL_CONNECTION } = process.env
+const PSQL_CONNECTION = '...'
 
 const db = new HFDB({
   schema: HFDBBitfinexSchema,
