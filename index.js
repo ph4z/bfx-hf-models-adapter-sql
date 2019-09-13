@@ -47,7 +47,7 @@ module.exports = ({
     connection,
     pool: {
       min: 2,
-      max: 25,
+      max: 25
     }
   })
 
