@@ -46,7 +46,7 @@ module.exports = ({
     acquireConnectionTimeout: 10 * 1000,
     connection,
     pool: {
-      min: 2,
+      min: 1,
       max: 25
     }
   })
