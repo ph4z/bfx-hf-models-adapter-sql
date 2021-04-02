@@ -33,9 +33,9 @@
     "BTC"
   ],
   "dependencies": {
-    "knex": "^0.17.6",
+    "knex": "^0.21.17",
     "lodash": "^4.17.10",
-    "pg": "^7.11.0"
+    "pg": "^8.5.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.6",
